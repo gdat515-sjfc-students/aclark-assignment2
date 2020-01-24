@@ -15,6 +15,9 @@ library(nflscrapR)
 library(teamcolors)
 ```
 
+### Question: 
+**For the 2019 regular season, what was the average depth of target and location of Kansas City Chiefs QB Patrick Mahomes receivers (includes WR, RB, TE)? **
+
 
 ```{r air yards clean, echo=FALSE, warning=FALSE}
 setwd("~/Documents/GitHub/GDAT515/aclark-Assignment2/aclark-assignment2")
@@ -94,9 +97,15 @@ ggplot(data = air_yards, aes(x=air_yards, y =locale_num)) +
   annotate("text", x = 9.7, y = 4.3, label = "First Down", angle = 90)
 ```
 
+## #Caption:
+*Average Depth of target and location on the field of each of the 15 pass catchers Patrick Mahomes threw too in 2019. *
 
+### Summary:
+The data comes from an R package "nflscrapR", it scrapes pro-football-reference.com for statistics. It pulls the data at a play level, the pull has 256 columns, I scraped aevery single Kansas City Chief play for 2019, it ended up being 2807 plays. I narrowed this down to just plays where Mahomes passed the ball, and elimated sacks. Then i did some aggregation on his recievers to find the average depth of target and the location they were targeted the most. Once I cleaned the data I used ggplot2 to show where each recievers average depth of target is and the location on the field, from Patrick Mahomes release point. The players are differentiated by shape. I also included a first down marker to show that he targets all his receivers further than a first down (10 yards).
 
-```{r car, echo=FALSE, warning=FALSE}
+And because I love ggplot and have a bunch of experience in it, I made another plot. I was interested in seeing all of Mahomes targets for 2019, and whether they were complete or imcomplete, i was curious about this after making the graph above. Since I had most of the data curated already and the base plot figured out, it just took some tweaking to make this graph. I think both graphs show some tendicies that Mahomes like to throw to his left, and medium distance. He does have some targets he likes to consistenly go deep too and dump off short passes to his running backs. 
+
+```{r targets, echo=FALSE, warning=FALSE}
 all_mahomes <- mahomes_only %>% select(pass_location, air_yards, incomplete_pass)
 all_passes_left <- all_mahomes %>% filter(pass_location == 'left')
 all_passes_left$pass_location <- runif(nrow(all_passes_left), min=1, max=5)
@@ -140,9 +149,9 @@ ggplot(data = all_passes, aes(x=air_yards, y =pass_location, shape = incomplete_
   #scale_x_continuous(breaks = scales::pretty_breaks(n = 3)) +
   xlab("Yardage") +
   ggtitle("Patrick Mahomes All Passes", subtitle = "2019 Passes from Release Point, Colored and Shaped by Completion") +
-  annotate("text", x = -.6, y = -4.6, label = "Release Point", angle = 90, fontface = "bold") +
+  annotate("text", x = -.6, y = 1, label = "Release Point", angle = 90, fontface = "bold") +
   annotate("text", x = 10.3, y = -4.3, label = "First Down", angle = 90, fontface = "bold") +
-  annotate("text", x = -3, y = -.5, label = "Pat Mahomes", angle = 45, size = 3, fontface = "bold")
+  annotate("text", x = -3, y = -.5, label = "Patrick Mahomes", angle = 45, size = 3, fontface = "bold")
 
 ```
 
