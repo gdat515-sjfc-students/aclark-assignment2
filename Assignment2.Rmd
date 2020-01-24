@@ -141,7 +141,7 @@ ggplot(data = all_passes, aes(x=air_yards, y =pass_location, shape = incomplete_
   xlab("Yardage") +
   ggtitle("Patrick Mahomes All Passes", subtitle = "2019 Passes from Release Point, Colored and Shaped by Completion") +
   annotate("text", x = -.6, y = -4.6, label = "Release Point", angle = 90, fontface = "bold") +
-  annotate("text", x = 9.3, y = 4.3, label = "First Down", angle = 90, fontface = "bold") +
+  annotate("text", x = 10.3, y = -4.3, label = "First Down", angle = 90, fontface = "bold") +
   annotate("text", x = -3, y = -.5, label = "Pat Mahomes", angle = 45, size = 3, fontface = "bold")
 
 ```
