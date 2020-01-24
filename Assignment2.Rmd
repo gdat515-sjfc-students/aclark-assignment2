@@ -16,7 +16,7 @@ library(teamcolors)
 ```
 
 ### Question: 
-**For the 2019 regular season, what was the average depth of target and location of Kansas City Chiefs QB Patrick Mahomes receivers (includes WR, RB, TE)? **
+For the 2019 regular season, what was the average depth of target and location of Kansas City Chiefs QB Patrick Mahomes receivers (includes WR, RB, TE)?
 
 
 ```{r air yards clean, echo=FALSE, warning=FALSE}
@@ -97,8 +97,8 @@ ggplot(data = air_yards, aes(x=air_yards, y =locale_num)) +
   annotate("text", x = 9.7, y = 4.3, label = "First Down", angle = 90)
 ```
 
-## #Caption:
-*Average Depth of target and location on the field of each of the 15 pass catchers Patrick Mahomes threw too in 2019. *
+### Caption:
+Average Depth of target and location on the field of each of the 15 pass catchers Patrick Mahomes threw too in 2019.
 
 ### Summary:
 The data comes from an R package "nflscrapR", it scrapes pro-football-reference.com for statistics. It pulls the data at a play level, the pull has 256 columns, I scraped aevery single Kansas City Chief play for 2019, it ended up being 2807 plays. I narrowed this down to just plays where Mahomes passed the ball, and elimated sacks. Then i did some aggregation on his recievers to find the average depth of target and the location they were targeted the most. Once I cleaned the data I used ggplot2 to show where each recievers average depth of target is and the location on the field, from Patrick Mahomes release point. The players are differentiated by shape. I also included a first down marker to show that he targets all his receivers further than a first down (10 yards).

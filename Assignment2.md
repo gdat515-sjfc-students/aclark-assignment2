@@ -1,15 +1,15 @@
 ### Question:
 
-**For the 2019 regular season, what was the average depth of target and
+For the 2019 regular season, what was the average depth of target and
 location of Kansas City Chiefs QB Patrick Mahomes receivers (includes
-WR, RB, TE)? **
+WR, RB, TE)?
 
 ![](Assignment2_files/figure-gfm/air%20yards%20plot-1.png)<!-- -->
 
-## \#Caption:
+### Caption:
 
-*Average Depth of target and location on the field of each of the 15
-pass catchers Patrick Mahomes threw too in 2019. *
+Average Depth of target and location on the field of each of the 15 pass
+catchers Patrick Mahomes threw too in 2019.
 
 ### Summary:
 
